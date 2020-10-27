@@ -1,7 +1,11 @@
 <template>
     <span
         :id="'nova-simple-tooltip' + id "
-        class="nova-simple-tooltip cursor-pointer items-center flex justify-center text-90 hover:text-primary"
+        class="nova-simple-tooltip cursor-pointer flex text-90 hover:text-primary"
+        :class="{
+            'items-center': iconPath || iconUrl,
+            'justify-center': iconPath || iconUrl,
+          }"
         ref="tooltip">
         <span class="mr-2" v-if=" text && iconPosition === 'right'">{{ text }}</span>
         <img v-if="iconUrl" :width="size || 25" :src="iconUrl" alt="Image description." />
